@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+
+# Start the FastAPI application
+# shellcheck disable=SC2086
+uvicorn main:app --host "$WWW_SH_HOST" --port "$WWW_SH_PORT" --workers $WWW_SH_WORKER
